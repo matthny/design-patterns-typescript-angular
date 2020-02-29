@@ -1,0 +1,24 @@
+<div class="wrapper">
+    <h3>
+      Pizza
+    </h3>
+
+    <form [formGroup]="pizzaForm" novalidate (ngSubmit)="onBakeClick()">
+      <div>
+        <input type="checkbox" formControlName="mushroom">
+        <label for="mushroom">Mushroom</label>
+      </div>
+      <div>
+        <input type="checkbox" formControlName="pepperoni">
+        <label for="pepperoni">Pepperoni</label> 
+      </div>
+      <br>
+      <div class="button">
+        <input type="submit" value="Bake!">
+      </div>
+    </form>
+
+    <p>
+      {{pizzaName}}
+    </p>
+</div>
