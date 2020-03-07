@@ -5,7 +5,6 @@ export interface Pizza {
 export class BasePizza implements Pizza {
 
   constructor() {
-    let a = 1;
   }
 
   public bakePizza() {

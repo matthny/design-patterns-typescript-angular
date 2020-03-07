@@ -6,7 +6,7 @@ import { Pepperoni, BasePizza, Pizza, Mushroom } from './pizza';
 })
 export class PizzaService {
 
-  public getPizza(isMushroom: boolean, isPepperoni: boolean): Pizza {
+  public orderPizza(isMushroom: boolean, isPepperoni: boolean): Pizza {
     let newPizza: Pizza;
 
     if (!isPepperoni && !isMushroom) {

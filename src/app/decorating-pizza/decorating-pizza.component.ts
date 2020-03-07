@@ -19,6 +19,10 @@ export class DecoratingPizzaComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.setForm();
+  }
+
+  private setForm(): void {
     this.pizzaForm = new FormGroup({
       mushroom: new FormControl(false),
       pepperoni: new FormControl(false)
@@ -26,7 +30,7 @@ export class DecoratingPizzaComponent implements OnInit {
   }
 
   public onBakeClick(): void  {
-    this.pizza = this.pizzaService.getPizza(this.pizzaForm.value.mushroom, this.pizzaForm.value.pepperoni);
+    this.pizza = this.pizzaService.orderPizza(this.pizzaForm.value.mushroom, this.pizzaForm.value.pepperoni);
     this.pizzaName = this.pizza.bakePizza();
   }
 }

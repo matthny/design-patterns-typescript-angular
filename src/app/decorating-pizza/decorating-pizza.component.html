@@ -3,6 +3,8 @@
       Pizza
     </h3>
 
+    <br>
+
     <form [formGroup]="pizzaForm" novalidate (ngSubmit)="onBakeClick()">
       <div>
         <input type="checkbox" formControlName="mushroom">
@@ -18,7 +20,9 @@
       </div>
     </form>
 
+    <br>
+
     <p>
-      {{pizzaName}}
+      Your pizza: {{pizzaName}}
     </p>
 </div>
