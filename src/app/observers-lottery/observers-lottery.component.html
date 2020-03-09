@@ -1,0 +1,41 @@
+<div class="wrapper">
+
+  <h3>
+    Lottery
+  </h3>
+
+  <br>
+
+  <form [formGroup]="observersForm" novalidate (ngSubmit)="onLotteryClick()">
+    <div>
+      <input type="checkbox" formControlName="observer1to5" (change)="handleClick()">
+      <label for="observer1to5">observer 1 to 5</label>
+    </div>
+    <div>
+      <input type="checkbox" formControlName="observer6to10" (change)="handleClick()">
+      <label for="observer6to10">observer 6 to 10</label> 
+    </div>
+    <br>
+    <div class="button">
+      <input type="submit" value="Start Lottery!">
+    </div>
+  </form>
+
+  <br>
+
+  <h3>
+    Picked number: {{numbersLottery.state}}
+  </h3>
+
+  <br>
+
+  <p *ngIf="numbersLottery.observers.includes(this.observer1to5)">
+    observer 1 to 5: {{this.observer1to5.result}}
+  </p>
+
+  <p *ngIf="numbersLottery.observers.includes(this.observer6to10)">
+    observer 6 to 10: {{this.observer6to10.result}}
+  </p>
+</div>
+
+

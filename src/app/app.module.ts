@@ -5,11 +5,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DecoratingPizzaComponent } from './decorating-pizza/decorating-pizza.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ObserversLotteryComponent } from './observers-lottery/observers-lottery.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DecoratingPizzaComponent
+    DecoratingPizzaComponent,
+    ObserversLotteryComponent
   ],
   imports: [
     BrowserModule,
