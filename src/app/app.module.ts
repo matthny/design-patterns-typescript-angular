@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { DecoratingPizzaComponent } from './decorating-pizza/decorating-pizza.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ObserversLotteryComponent } from './observers-lottery/observers-lottery.component';
+import { CulturesFacadeComponent } from './cultures-facade/cultures-facade.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DecoratingPizzaComponent,
-    ObserversLotteryComponent
+    ObserversLotteryComponent,
+    CulturesFacadeComponent
   ],
   imports: [
     BrowserModule,
