@@ -5,9 +5,12 @@ import { Injectable } from '@angular/core';
 })
 export class MovieService {
 
-  constructor() {}
+  private id: number;
 
-  get resources() {
+  constructor() {
+  }
+
+  private get resources() {
     return [
       { id: 1, title: 'Avengers' },
       { id: 2, title: 'Antman and the Wasp' },
@@ -16,6 +19,6 @@ export class MovieService {
   }
 
   public getMovie(id) {
-    return this.resources.find(element => element.id === id);
+    return this.resources.find(item => item.id === id);
   }
 }
