@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CultureFacadeService, CultureType } from './api/culture-facade.service';
+import { FormGroup, FormControl } from '@angular/forms';
+import { AnonymousSubject } from 'rxjs/internal/Subject';
 
 @Component({
   selector: 'app-cultures-facade',
@@ -8,15 +10,25 @@ import { CultureFacadeService, CultureType } from './api/culture-facade.service'
 })
 export class CulturesFacadeComponent implements OnInit {
 
+  private orderForm: FormGroup;
+  private order: any;
+
   constructor(private cultureFacade: CultureFacadeService) { }
 
   ngOnInit() {
-    this.go();
+    this.setForm();
   }
 
-  private go() {
-    this.cultureFacade.get(CultureType.tvShow, 5)
-      .then(data => console.log(data))
-      .catch(e => console.log(e));
+  private setForm(): void {
+    this.orderForm = new FormGroup({
+      culture: new FormControl(),
+      id: new FormControl()
+    });
   }
-}
+
+  public onGetClick(): void {
+    this.cultureFacade.get(this.orderForm.get('culture').value, this.orderForm.get('id').value)
+    .then(data => this.order = data['title'])
+    .catch(e => this.order = e);
+  }
+ }
