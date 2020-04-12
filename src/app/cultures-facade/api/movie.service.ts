@@ -21,4 +21,8 @@ export class MovieService {
   public getMovie(id) {
     return this.resources.find(item => item.id === id);
   }
+
+  public getAllMovies() {
+    return this.resources;
+  }
 }

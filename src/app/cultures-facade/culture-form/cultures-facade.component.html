@@ -5,6 +5,13 @@
 
   <br>
 
+  
+  <p *ngFor="let movie of movies">
+    {{movie.title}}
+  </p>
+
+
+
   <form [formGroup]="orderForm" novalidate (ngSubmit)="onGetClick()">
     <div>
       <input type="radio" value="book" formControlName="culture">

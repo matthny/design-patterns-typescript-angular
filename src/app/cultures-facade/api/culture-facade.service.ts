@@ -24,7 +24,7 @@ export class CultureFacadeService {
     private tvShowService: TvShowService
   ) {}
 
-  get(type: CultureType, id: number) {
+  get(type: CultureType, id?: number) {
     switch (type) {
       case CultureType.music: {
         return this.tryToReturn(this.findMusic, id);
@@ -48,21 +48,52 @@ export class CultureFacadeService {
     }
   }
 
-  private findMusic(id: number) {
-    const music = new Music();
-    return music.fetch(id);
+  private findMusic(id?: number) {
+    if (id != null) {
+      const music = new Music();
+      return music.fetch(id);
+    }
+
+    if (id == null) {
+      const music = new Music();
+      return music.resources;
+    }
   }
 
-  private findMovie(id: number) {
-    return this.movieService.getMovie(id);
+  private findMovie(id?: number) {
+    if (id != null) {
+      return this.movieService.getMovie(id);
+    }
+
+    if (id == null) {
+      return this.movieService.getAllMovies();
+    }
   }
 
-  private findTvShow(id: number) {
-    return this.tvShowService.getTvShow(id);
+  private findTvShow(id?: number) {
+    if (id != null) {
+      return this.tvShowService.getTvShow(id);
+    }
+
+    if (id == null) {
+      const tvShows = [];
+      let showId: number = 1;
+      while (this.tvShowService.getTvShow(showId) == null) {
+        tvShows.push(this.tvShowService.getTvShow(showId));
+        showId++;
+      }
+      return tvShows;
+    }
   }
 
-  private findBook(id: number) {
-    return booksResource.find(item => item.id === id);
+  private findBook(id?: number) {
+    if (id != null) {
+      return booksResource.find(item => item.id === id);
+    }
+
+    if (id == null) {
+      return booksResource;
+    }
   }
 
   private tryToReturn(func, id) {
