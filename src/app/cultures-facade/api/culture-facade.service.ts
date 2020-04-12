@@ -6,6 +6,10 @@ import { MovieService } from './movie.service';
 import { TvShowService } from './tv-show.service';
 import { Music } from './music';
 
+export interface CultureFacadeParams {
+  id: number;
+  cultureType: CultureType;
+}
 
 export enum CultureType {
   music = 'music',
@@ -29,19 +33,15 @@ export class CultureFacadeService {
       case CultureType.music: {
         return this.tryToReturn(this.findMusic, id);
       }
-
       case CultureType.movie: {
         return this.tryToReturn(this.findMovie, id);
       }
-
       case CultureType.tvShow: {
         return this.tryToReturn(this.findTvShow, id);
       }
-
       case CultureType.book: {
         return this.tryToReturn(this.findBook, id);
       }
-
       default: {
         throw new Error('No type set!');
       }
@@ -78,7 +78,7 @@ export class CultureFacadeService {
     if (id == null) {
       const tvShows = [];
       let showId: number = 1;
-      while (this.tvShowService.getTvShow(showId) == null) {
+      while (this.tvShowService.getTvShow(showId) != null) {
         tvShows.push(this.tvShowService.getTvShow(showId));
         showId++;
       }

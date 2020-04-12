@@ -2,12 +2,12 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { DecoratingPizzaComponent } from './decorating-pizza/decorating-pizza.component';
 import { ObserversLotteryComponent } from './observers-lottery/observers-lottery.component';
-import { CulturesFacadeComponent } from './cultures-facade/culture-form/cultures-facade.component';
+import { CultureComponent } from './cultures-facade/culture.component';
 
 const routes: Routes = [
   { path: 'decorating-pizza', component: DecoratingPizzaComponent },
   { path: 'observers-lottery', component: ObserversLotteryComponent },
-  { path: 'cultures-facade', component: CulturesFacadeComponent }
+  { path: 'cultures-facade', component: CultureComponent }
 ];
 
 

@@ -1,0 +1,17 @@
+<div class="wrapper">
+  <h3>
+    Culture
+  </h3>
+
+  <app-culture-show></app-culture-show>
+
+  <br>
+  <br>
+
+  <app-culture-form (selected)="onGetOrder($event)"></app-culture-form>
+
+  <p>
+    Your order: {{order}}
+  </p>
+</div>
+
