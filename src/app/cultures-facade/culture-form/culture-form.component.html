@@ -1,25 +1,28 @@
-<form [formGroup]="orderForm" (ngSubmit)="onGetClick()">
-  <div>
-    <input type="radio" value="book" formControlName="culture">
-    <label for="book">book</label>
-  </div>
-  <div>
-    <input type="radio" value="movie" formControlName="culture">
-    <label for="movie">movie</label>
-  </div>
-  <div>
-    <input type="radio" value="tvShow" formControlName="culture">
-    <label for="tvShow">tv show</label> 
-  </div>
-  <div>
-    <input type="radio" value="music" formControlName="culture">
-    <label for="music">music</label> 
-  </div>
-  <div>
-    <input type="number"  min="1" formControlName="id">
-  </div>
-  <br>
-  <div class="button">
-    <input type="submit" value="Get!">
-  </div>
-</form>
+<div class="form-wrapper">
+  <form [formGroup]="orderForm" (ngSubmit)="onGetClick()">
+    <div>
+      <input type="radio" value="movie" formControlName="culture">
+      <label for="movie">movie</label>
+    </div>
+    <div>
+      <input type="radio" value="book" formControlName="culture">
+      <label for="book">book</label>
+    </div>
+    <div>
+      <input type="radio" value="tvShow" formControlName="culture">
+      <label for="tvShow">tv show</label> 
+    </div>
+    <div>
+      <input type="radio" value="music" formControlName="culture">
+      <label for="music">music</label> 
+    </div>
+    <div>
+      <label for="music">Number: </label> 
+      <input type="number"  min="1" formControlName="id">
+    </div>
+    <br>
+    <div class="button">
+      <input type="submit" value="Get!">
+    </div>
+  </form>
+</div>

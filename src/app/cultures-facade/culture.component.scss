@@ -1,8 +1,9 @@
-ol {
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 
 
-  li {
-    display: list-item;
-    list-style-position: inside;
-  }
 }

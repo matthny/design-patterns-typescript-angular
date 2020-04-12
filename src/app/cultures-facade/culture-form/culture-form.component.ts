@@ -23,7 +23,7 @@ export class CultureFormComponent implements OnInit {
 
   private setForm(): void {
     this.orderForm = new FormGroup({
-      culture: new FormControl('book'),
+      culture: new FormControl('movie'),
       id: new FormControl('', Validators.required)
     });
   }
