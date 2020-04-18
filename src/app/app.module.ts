@@ -9,6 +9,8 @@ import { ObserversLotteryComponent } from './observers-lottery/observers-lottery
 import { CultureComponent } from './cultures-facade/culture.component';
 import { CultureFormComponent } from './cultures-facade/culture-form/culture-form.component';
 import { CultureShowComponent } from './cultures-facade/culture-show/culture-show.component';
+import { CreatureSimpleFactoryComponent } from './creature-simple-factory/creature-simple-factory.component';
+import { CreatureSimpleFactoryFormComponent } from './creature-simple-factory/creature-simple-factory-form/creature-simple-factory-form.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { CultureShowComponent } from './cultures-facade/culture-show/culture-sho
     ObserversLotteryComponent,
     CultureComponent,
     CultureFormComponent,
-    CultureShowComponent
+    CultureShowComponent,
+    CreatureSimpleFactoryComponent,
+    CreatureSimpleFactoryFormComponent
   ],
   imports: [
     BrowserModule,

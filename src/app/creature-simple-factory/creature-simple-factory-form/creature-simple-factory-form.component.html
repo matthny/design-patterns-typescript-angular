@@ -1,0 +1,16 @@
+<div class="form-wrapper">
+  <form [formGroup]="creatureForm" (ngSubmit)="onButtonClick()">
+    <div>
+      <input type="radio" value="dog" formControlName="creatureType">
+      <label for="dog">Dog</label>
+    </div>
+    <div>
+      <input type="radio" value="cat" formControlName="creatureType">
+      <label for="cat">Cat</label>
+    </div>
+    <br>
+    <div class="button">
+      <input type="submit" value="Get Creature!">
+    </div>
+  </form>
+</div>
