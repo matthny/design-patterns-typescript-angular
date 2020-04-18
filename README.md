@@ -2,7 +2,7 @@
  ..in the world of TypeScript and Angular.
 
 ## ToDo:
-- [ ] Simple Factory
+- [x] Simple Factory
 - [ ] Factory Method
 - [ ] Abstract factory
 - [ ] Builder
