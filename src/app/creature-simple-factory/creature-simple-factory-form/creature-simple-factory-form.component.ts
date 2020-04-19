@@ -1,6 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { CultureFacadeParams, CultureFacadeService } from 'src/app/cultures-facade/api/culture-facade.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { CreatureType } from '../models/helper';
 
 @Component({
   selector: 'app-creature-simple-factory-form',
@@ -9,11 +9,11 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class CreatureSimpleFactoryFormComponent implements OnInit {
 
-  @Output() selected = new EventEmitter<CultureFacadeParams>();
+  @Output() selected = new EventEmitter<CreatureType>();
 
   private creatureForm: FormGroup;
 
-  constructor(private cultureFacade: CultureFacadeService) { }
+  constructor() { }
 
   ngOnInit() {
     this.setForm();
