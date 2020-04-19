@@ -1,0 +1,16 @@
+<div class="form-wrapper">
+  <form [formGroup]="shapeForm" (ngSubmit)="onButtonClick()">
+    <div>
+      <input type="radio" value="circle" formControlName="shapeType">
+      <label for="circle">Circle</label>
+    </div>
+    <div>
+      <input type="radio" value="square" formControlName="shapeType">
+      <label for="square">Square</label>
+    </div>
+    <br>
+    <div class="button">
+      <input type="submit" value="Get Shape!">
+    </div>
+  </form>
+</div>

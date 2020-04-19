@@ -11,6 +11,8 @@ import { CultureFormComponent } from './cultures-facade/culture-form/culture-for
 import { CultureShowComponent } from './cultures-facade/culture-show/culture-show.component';
 import { CreatureSimpleFactoryComponent } from './creature-simple-factory/creature-simple-factory.component';
 import { CreatureSimpleFactoryFormComponent } from './creature-simple-factory/creature-simple-factory-form/creature-simple-factory-form.component';
+import { ShapeFactoryMethodComponent } from './shape-factory-method/shape-factory-method.component';
+import { ShapeFactoryMethodFormComponent } from './shape-factory-method/shape-factory-method-form/shape-factory-method-form.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { CreatureSimpleFactoryFormComponent } from './creature-simple-factory/cr
     CultureFormComponent,
     CultureShowComponent,
     CreatureSimpleFactoryComponent,
-    CreatureSimpleFactoryFormComponent
+    CreatureSimpleFactoryFormComponent,
+    ShapeFactoryMethodComponent,
+    ShapeFactoryMethodFormComponent
   ],
   imports: [
     BrowserModule,
