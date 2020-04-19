@@ -3,7 +3,7 @@
 
 ## ToDo:
 - [x] Simple Factory
-- [ ] Factory Method
+- [x] Factory Method
 - [ ] Abstract factory
 - [ ] Builder
 - [ ] Prototype
