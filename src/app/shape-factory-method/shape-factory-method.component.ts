@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Circle } from './models/circle';
-import { ShapeFactory } from './models/shape-factory';
-import { CircleFactory } from './models/circle-factory';
+import { ShapeStore } from './models/shape-store';
+import { CircleStore } from './models/circle-store';
 import { IShape } from './models/shape';
-import { ShapeType } from './models/helper';
-import { SquareFactory } from './models/square-factory';
+import { ShapeType, ShapeStyle, ShapeParams } from './models/helper';
+import { SquareStore } from './models/square-store';
 
 @Component({
   selector: 'app-shape-factory-method',
@@ -16,25 +15,26 @@ export class ShapeFactoryMethodComponent implements OnInit {
 
   private shape: IShape;
   public shapeName: string;
+  private circleStore: CircleStore;
+  private squareStore: SquareStore;
 
   constructor() {
-
+    this.circleStore = new CircleStore();
+    this.squareStore = new SquareStore();
   }
 
   ngOnInit() {
   }
 
-  private handleForm(shapeType: ShapeType) {
-    let factory: ShapeFactory;
-    if (shapeType === ShapeType.circle) {
-      factory = new CircleFactory();
+  private handleForm(shapeStyle: ShapeParams) {
+    if (shapeStyle.shapeType === ShapeType.circle) {
+      this.shape = this.circleStore.orderShape(shapeStyle.shapeStyle);
     }
 
-    if (shapeType === ShapeType.square) {
-      factory = new SquareFactory();
+    if (shapeStyle.shapeType === ShapeType.square) {
+      this.shape = this.squareStore.orderShape(shapeStyle.shapeStyle);
     }
 
-    this.shape = factory.buildShape();
     this.shapeName = this.shape.getName();
     document.getElementById('shape').innerHTML = this.shape.getHTML();
   }

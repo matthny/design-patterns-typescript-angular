@@ -1,6 +1,6 @@
 import { IShape } from './shape';
 
-export class Circle implements IShape {
+export class RedStyleCircle implements IShape {
   public getHTML() {
     return  `
       <svg height="100" width="100">
@@ -9,6 +9,6 @@ export class Circle implements IShape {
   }
 
   public getName() {
-    return 'Circle';
+    return 'Circle Red Style';
   }
 }
