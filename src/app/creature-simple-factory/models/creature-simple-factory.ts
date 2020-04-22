@@ -13,11 +13,9 @@ export class CreatureSimpleFactory {
     switch (type) {
       case CreatureType.dog: {
         return new Dog();
-        break;
       }
       case CreatureType.cat: {
         return new Cat();
-        break;
       }
     }
   }
